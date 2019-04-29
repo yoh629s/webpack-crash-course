@@ -1,15 +1,25 @@
 const path = require('path')
 
-//デバッグログ
-console.log(path.resolve(__dirname, 'dist'))
+const outputPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist')
-      },
-    devServer: {
-      contentBase: path.resolve(__dirname, 'dist')
-    }
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: outputPath
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
+  },
+  devServer: {
+    contentBase: outputPath
   }
+}
