@@ -61,4 +61,4 @@ typings/
 .next
 
 # 追加
-/dist/main.js
+/dist
