@@ -7,3 +7,7 @@
 ```
 npx live-server
 ```
+
+### webpack dev server起動
+
+webpack-dev-server --open chrome --mode development
